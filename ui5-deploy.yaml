@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: com.enb.manage.distrlist
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: CMMDEV-ED2CLNT201
+          url: http://saped2.enbridge.com:443
+          client: '201'
+        app:
+          name: ZMANAGDISTRLIST
+          description: 'E-CS-003_004 : Manage Distribution List'
+          package: ZCMM_MM_ENH
+          transport: ED2K900804
+        exclude:
+          - /test/

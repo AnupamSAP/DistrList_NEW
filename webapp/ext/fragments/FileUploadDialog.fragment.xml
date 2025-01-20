@@ -1,0 +1,47 @@
+<!-- Use stable and unique IDs!-->
+<core:FragmentDefinition
+    xmlns:core='sap.ui.core'
+    xmlns='sap.m'
+    xmlns:l="sap.ui.layout"
+    xmlns:u="sap.ui.unified">
+    <!--  add your xml here -->
+    <Dialog
+       contentWidth="20%"
+        id="mainDialog"
+        title="Bulk Upload Contacts">
+        <content>
+        	
+      <l:VerticalLayout class="sapUiSmallMargin">
+     <Button text="Download Template" icon="sap-icon://download-from-cloud" iconFirst="true" press="handler.onPressDownloadTemplate" core:require="{ handler: 'com/enb/manage/distrlist/ext/objectPageExt/objectPageExt'}"/>
+     
+		<u:FileUploader width="100%"
+			id="fileUploader"
+			name="myFileUpload"
+			
+			tooltip="Upload your file to the local server"
+            core:require="{ handler: 'com/enb/manage/distrlist/ext/objectPageExt/objectPageExt'}"
+			 change="handler.onFileChange"/>
+		</l:VerticalLayout>
+
+        </content>
+        <beginButton>
+            <Button
+                text="Upload"
+                type="Emphasized"
+                id="idUpload"
+                press="handler.onUploadPress"
+                core:require="{ handler: 'com/enb/manage/distrlist/ext/objectPageExt/objectPageExt'}"
+            />
+            
+        </beginButton>
+        <endButton>
+         <!-- <Button
+                text="Upload"
+                type="Emphasized"
+                id="idCancel"
+                press="closeDialog"
+            /> -->
+            <Button core:require="{ handler: 'com/enb/manage/distrlist/ext/objectPageExt/objectPageExt'}" id="BtnSuccess" press="handler.closeDialog" text="Cancel"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

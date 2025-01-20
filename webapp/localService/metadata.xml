@@ -1,0 +1,2174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="zc_css_003_Attachment_listType">
+                <Key>
+                    <PropertyRef Name="AttachId"/>
+                    <PropertyRef Name="ListId"/>
+                    <PropertyRef Name="ListName"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="AttachId" Type="Edm.String" Nullable="false" MaxLength="32"/>
+                <Property Name="ListId" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ListName" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Comment01" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="Attachment" Type="Edm.Stream"/>
+                <Property Name="Mimetype" Type="Edm.String" Nullable="false" MaxLength="128"/>
+                <Property Name="Filename" Type="Edm.String" Nullable="false" MaxLength="128"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="__EntityControl" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.EntityControl"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.I_DraftAdministrativeDataType"/>
+                <NavigationProperty Name="SiblingEntity" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.zc_css_003_Attachment_listType"/>
+                <NavigationProperty Name="_listmang" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false" Partner="_Attach">
+                    <ReferentialConstraint Property="ListId" ReferencedProperty="ListId"/>
+                    <ReferentialConstraint Property="ListName" ReferencedProperty="ListName"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="ZC_CSS_003_LIST_MANG_CHNG_HSTType">
+                <Key>
+                    <PropertyRef Name="ListId"/>
+                    <PropertyRef Name="ListName"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ListId" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ListName" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="DepartmeRespons" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="ValidFrom" Type="Edm.Date"/>
+                <Property Name="ValidTo" Type="Edm.Date"/>
+                <Property Name="SubscriptionList" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="ListStatus" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="ListCriteria" Type="Edm.String" Nullable="false" MaxLength="120"/>
+                <Property Name="ListDescr" Type="Edm.String" Nullable="false" MaxLength="120"/>
+                <Property Name="LastUpdated" Type="Edm.Date"/>
+                <Property Name="QualifyingCriteria" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="AgreementMarket" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="AgreementType" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="AgreementSector" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="ServiceOffering" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="ContactType" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="AccessRightCategory" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="AccessRight" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="__CreateByAssociationControl" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTCbAControl"/>
+                <Property Name="__EntityControl" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.EntityControl"/>
+                <Property Name="__OperationControl" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTOperationControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.I_DraftAdministrativeDataType"/>
+                <NavigationProperty Name="SiblingEntity" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType"/>
+                <NavigationProperty Name="_Attach" Type="Collection(com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.zc_css_003_Attachment_listType)" Partner="_listmang">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+                <NavigationProperty Name="_Changelog" Type="Collection(com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_CHANGE_LOG_MAINType)"/>
+                <NavigationProperty Name="_Contact" Type="Collection(com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_CONTACT_LIST_MAINTEType)" Partner="_listmang">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+                <NavigationProperty Name="_Inactive" Type="Collection(com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.zc_css_003_inacti_contact_listType)" Partner="_listmang">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="ZC_CSS_003_CONTACT_LIST_MAINTEType">
+                <Key>
+                    <PropertyRef Name="ListId"/>
+                    <PropertyRef Name="ListName"/>
+                    <PropertyRef Name="ContactId"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ListId" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ListName" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ContactId" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ContactName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="Origin" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="CompanyName" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Phone" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Mobile" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="241"/>
+                <Property Name="ValidFrom" Type="Edm.Date"/>
+                <Property Name="ValidTo" Type="Edm.Date"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="__EntityControl" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.EntityControl"/>
+                <Property Name="__OperationControl" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_CONTACT_LIST_MAINTEOperationControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.I_DraftAdministrativeDataType"/>
+                <NavigationProperty Name="SiblingEntity" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_CONTACT_LIST_MAINTEType"/>
+                <NavigationProperty Name="_listmang" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false" Partner="_Contact">
+                    <ReferentialConstraint Property="ListId" ReferencedProperty="ListId"/>
+                    <ReferentialConstraint Property="ListName" ReferencedProperty="ListName"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="zc_css_003_inacti_contact_listType">
+                <Key>
+                    <PropertyRef Name="ListId"/>
+                    <PropertyRef Name="ListName"/>
+                    <PropertyRef Name="ContactId"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ListId" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ListName" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ContactId" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ContactName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="Origin" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="CompanyName" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Phone" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Mobile" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="241"/>
+                <Property Name="ValidFrom" Type="Edm.Date"/>
+                <Property Name="ValidTo" Type="Edm.Date"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="__EntityControl" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.EntityControl"/>
+                <Property Name="__OperationControl" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.zc_css_003_inacti_contact_listOperationControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.I_DraftAdministrativeDataType"/>
+                <NavigationProperty Name="SiblingEntity" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.zc_css_003_inacti_contact_listType"/>
+                <NavigationProperty Name="_listmang" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false" Partner="_Inactive">
+                    <ReferentialConstraint Property="ListId" ReferencedProperty="ListId"/>
+                    <ReferentialConstraint Property="ListName" ReferencedProperty="ListName"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="I_DraftAdministrativeDataType">
+                <Key>
+                    <PropertyRef Name="DraftUUID"/>
+                    <PropertyRef Name="DraftEntityType"/>
+                </Key>
+                <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="DraftEntityType" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="CreatedByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="DraftAccessType" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="ProcessingStartDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="InProcessByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="DraftIsKeptByUser" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="EnqueueStartDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftIsCreatedByMe" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftIsLastChangedByMe" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftIsProcessedByMe" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="CreatedByUserDescription" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="LastChangedByUserDescription" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="InProcessByUserDescription" Type="Edm.String" Nullable="false" MaxLength="80"/>
+            </EntityType>
+            <EntityType Name="ZC_CSS_003_CHANGE_LOG_MAINType">
+                <Key>
+                    <PropertyRef Name="ListId"/>
+                    <PropertyRef Name="ListName"/>
+                    <PropertyRef Name="ChangedById"/>
+                </Key>
+                <Property Name="ListId" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ListName" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ChangedById" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Udate" Type="Edm.Date"/>
+                <Property Name="Utime" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="Contact" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ChangedByName" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="FieldName" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="OldValue" Type="Edm.String" Nullable="false" MaxLength="254"/>
+                <Property Name="NewValue" Type="Edm.String" Nullable="false" MaxLength="254"/>
+                <Property Name="AdditionalKeys" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <NavigationProperty Name="_listmang" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType"/>
+            </EntityType>
+            <ComplexType Name="ZC_CSS_003_LIST_MANG_CHNG_HSTCbAControl">
+                <Property Name="_Attach" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="_Contact" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="_Inactive" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="ZC_CSS_003_LIST_MANG_CHNG_HSTOperationControl">
+                <Property Name="Copy" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="Deactivate" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="Edit" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="Reactivate" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="ZC_CSS_003_CONTACT_LIST_MAINTEOperationControl">
+                <Property Name="Duplicate" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="zc_css_003_inacti_contact_listOperationControl">
+                <Property Name="Reinstate" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="EntityControl">
+                <Property Name="Deletable" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="Updatable" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="SAP__Message">
+                <Property Name="code" Type="Edm.String" Nullable="false"/>
+                <Property Name="message" Type="Edm.String" Nullable="false"/>
+                <Property Name="target" Type="Edm.String"/>
+                <Property Name="additionalTargets" Type="Collection(Edm.String)" Nullable="false"/>
+                <Property Name="transition" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="numericSeverity" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="longtextUrl" Type="Edm.String"/>
+            </ComplexType>
+            <Action Name="Reactivate" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false"/>
+            </Action>
+            <Action Name="Resume" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false"/>
+            </Action>
+            <Action Name="Reinstate" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.zc_css_003_inacti_contact_listType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.zc_css_003_inacti_contact_listType" Nullable="false"/>
+            </Action>
+            <Action Name="Prepare" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false"/>
+            </Action>
+            <Action Name="Deactivate" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false"/>
+            </Action>
+            <Action Name="Edit" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false"/>
+            </Action>
+            <Action Name="BulkUpload" IsBound="true">
+                <Parameter Name="_it" Type="Collection(com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_CONTACT_LIST_MAINTEType)" Nullable="false"/>
+                <Parameter Name="mimeType" Type="Edm.String" Nullable="false"/>
+                <Parameter Name="fileName" Type="Edm.String" Nullable="false"/>
+                <Parameter Name="fileContent" Type="Edm.Binary" Nullable="false"/>
+            </Action>
+            <Action Name="Activate" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false"/>
+            </Action>
+            <Action Name="Discard" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false"/>
+            </Action>
+            <Action Name="Copy" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false"/>
+                <Parameter Name="ResultIsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Parameter Name="list_id" Type="Edm.String" Nullable="false"/>
+                <Parameter Name="list_name" Type="Edm.String" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType" Nullable="false"/>
+            </Action>
+            <Action Name="Duplicate" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_CONTACT_LIST_MAINTEType" Nullable="false"/>
+                <Parameter Name="ResultIsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Parameter Name="contact_id" Type="Edm.String" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_CONTACT_LIST_MAINTEType" Nullable="false"/>
+            </Action>
+            <EntityContainer Name="Container">
+                <EntitySet Name="I_DraftAdministrativeData" EntityType="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.I_DraftAdministrativeDataType"/>
+                <EntitySet Name="zc_css_003_Attachment_list" EntityType="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.zc_css_003_Attachment_listType">
+                    <NavigationPropertyBinding Path="DraftAdministrativeData" Target="I_DraftAdministrativeData"/>
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="zc_css_003_Attachment_list"/>
+                    <NavigationPropertyBinding Path="_listmang" Target="ZC_CSS_003_LIST_MANG_CHNG_HST"/>
+                </EntitySet>
+                <EntitySet Name="ZC_CSS_003_CHANGE_LOG_MAIN" EntityType="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_CHANGE_LOG_MAINType">
+                    <NavigationPropertyBinding Path="_listmang" Target="ZC_CSS_003_LIST_MANG_CHNG_HST"/>
+                </EntitySet>
+                <EntitySet Name="ZC_CSS_003_CONTACT_LIST_MAINTE" EntityType="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_CONTACT_LIST_MAINTEType">
+                    <NavigationPropertyBinding Path="DraftAdministrativeData" Target="I_DraftAdministrativeData"/>
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="ZC_CSS_003_CONTACT_LIST_MAINTE"/>
+                    <NavigationPropertyBinding Path="_listmang" Target="ZC_CSS_003_LIST_MANG_CHNG_HST"/>
+                </EntitySet>
+                <EntitySet Name="zc_css_003_inacti_contact_list" EntityType="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.zc_css_003_inacti_contact_listType">
+                    <NavigationPropertyBinding Path="DraftAdministrativeData" Target="I_DraftAdministrativeData"/>
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="zc_css_003_inacti_contact_list"/>
+                    <NavigationPropertyBinding Path="_listmang" Target="ZC_CSS_003_LIST_MANG_CHNG_HST"/>
+                </EntitySet>
+                <EntitySet Name="ZC_CSS_003_LIST_MANG_CHNG_HST" EntityType="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType">
+                    <NavigationPropertyBinding Path="DraftAdministrativeData" Target="I_DraftAdministrativeData"/>
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="ZC_CSS_003_LIST_MANG_CHNG_HST"/>
+                    <NavigationPropertyBinding Path="_Attach" Target="zc_css_003_Attachment_list"/>
+                    <NavigationPropertyBinding Path="_Changelog" Target="ZC_CSS_003_CHANGE_LOG_MAIN"/>
+                    <NavigationPropertyBinding Path="_Contact" Target="ZC_CSS_003_CONTACT_LIST_MAINTE"/>
+                    <NavigationPropertyBinding Path="_Inactive" Target="zc_css_003_inacti_contact_list"/>
+                </EntitySet>
+            </EntityContainer>
+            <Annotations Target="SAP__self.zc_css_003_Attachment_listType/ListId">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="List ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_Attachment_listType/ListName">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="List Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_Attachment_listType/Comment01">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Comments"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_Attachment_listType/Attachment">
+                <Annotation Term="SAP__core.ContentDisposition">
+                    <Record>
+                        <PropertyValue Property="Filename" Path="Filename"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.MediaType" Path="Mimetype"/>
+                <Annotation Term="SAP__common.Label" String="Attachment"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_Attachment_listType/Mimetype">
+                <Annotation Term="SAP__core.IsMediaType"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="File Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_Attachment_listType/Filename">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="File Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_Attachment_listType/HasDraftEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has Draft"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has draft document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_Attachment_listType/DraftEntityCreationDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_Attachment_listType/DraftEntityLastChangeDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_Attachment_listType/HasActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_Attachment_listType/IsActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Is active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Is active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_Attachment_listType/__EntityControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/zc_css_003_Attachment_list">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_listmang"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.DraftNode">
+                    <Record/>
+                </Annotation>
+                <Annotation Term="SAP__common.DraftActivationVia">
+                    <Collection>
+                        <String>SAP__self.Container/ZC_CSS_003_LIST_MANG_CHNG_HST</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityCreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityLastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Path="__EntityControl/Deletable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Path="__EntityControl/Updatable"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_Attachment_listType">
+                <Annotation Term="SAP__common.Label" String="Cunsumption view of Attachment"/>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Attach Id"/>
+                            <PropertyValue Property="ID" String="List"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Attachment"/>
+                        <PropertyValue Property="TypeNamePlural" String="Attachments"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Label" String="Attach ID"/>
+                                <PropertyValue Property="Value" Path="AttachId"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Attach Id"/>
+                            <PropertyValue Property="Value" Path="AttachId"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Attachment"/>
+                            <PropertyValue Property="Value" Path="Attachment"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="File Name"/>
+                            <PropertyValue Property="Value" Path="Filename"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Attach Id"/>
+                            <PropertyValue Property="Value" Path="AttachId"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Attachment"/>
+                            <PropertyValue Property="Value" Path="Attachment"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="File Name"/>
+                            <PropertyValue Property="Value" Path="Filename"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/ListId">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_css_003_list_maint_vh/0001;ps='srvd-zui_css_003_list_mang_chnghst-0001';va='com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.et-zc_css_003_list_mang_chng_hst.listid'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="List ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/ListName">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_css_003_list_maint_vh/0001;ps='srvd-zui_css_003_list_mang_chnghst-0001';va='com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.et-zc_css_003_list_mang_chng_hst.listname'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="List Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/DepartmeRespons">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_css_003_list_maint_dd/0001;ps='srvd-zui_css_003_list_mang_chnghst-0001';va='com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.et-zc_css_003_list_mang_chng_hst.departmerespons'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+                <Annotation Term="SAP__common.Label" String="Departmnt Respons"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Department Responsible"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/SubscriptionList">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_css_003_list_maint_dd/0001;ps='srvd-zui_css_003_list_mang_chnghst-0001';va='com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.et-zc_css_003_list_mang_chng_hst.subscriptionlist'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+                <Annotation Term="SAP__common.Label" String="Subscription List"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/ListStatus">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_css_003_list_maint_dd/0001;ps='srvd-zui_css_003_list_mang_chnghst-0001';va='com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.et-zc_css_003_list_mang_chng_hst.liststatus'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+                <Annotation Term="SAP__common.Label" String="List Status"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/ListCriteria">
+                <Annotation Term="SAP__common.Label" String="List Criteria"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_css_003_list_maint_vh/0001;ps='srvd-zui_css_003_list_mang_chnghst-0001';va='com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.et-zc_css_003_list_mang_chng_hst.listcriteria'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.QuickInfo" String="List Criteria"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/ListDescr">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="List Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/QualifyingCriteria">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Qualifying criteria"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Qualifying Criteria"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/AgreementMarket">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_css_003_contract_cat_dd/0001;ps='srvd-zui_css_003_list_mang_chnghst-0001';va='com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.et-zc_css_003_list_mang_chng_hst.agreementmarket'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+                <Annotation Term="SAP__common.Label" String="Agreement market"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Agreement Market"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/AgreementType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_css_003_contract_cat_dd/0001;ps='srvd-zui_css_003_list_mang_chnghst-0001';va='com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.et-zc_css_003_list_mang_chng_hst.agreementtype'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+                <Annotation Term="SAP__common.Label" String="Agreement Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/AgreementSector">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_css_003_contract_cat_dd/0001;ps='srvd-zui_css_003_list_mang_chnghst-0001';va='com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.et-zc_css_003_list_mang_chng_hst.agreementsector'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+                <Annotation Term="SAP__common.Label" String="Agreement Sector"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/ServiceOffering">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_css_003_contract_cat_dd/0001;ps='srvd-zui_css_003_list_mang_chnghst-0001';va='com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.et-zc_css_003_list_mang_chng_hst.serviceoffering'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+                <Annotation Term="SAP__common.Label" String="Service Offering"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/ContactType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_css_003_contract_cat_dd/0001;ps='srvd-zui_css_003_list_mang_chnghst-0001';va='com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.et-zc_css_003_list_mang_chng_hst.contacttype'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+                <Annotation Term="SAP__common.Label" String="Contact Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/AccessRightCategory">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_css_003_contract_cat_dd/0001;ps='srvd-zui_css_003_list_mang_chnghst-0001';va='com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.et-zc_css_003_list_mang_chng_hst.accessrightcategory'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+                <Annotation Term="SAP__common.Label" String="Access Right Categor"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Access Right Category"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/AccessRight">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_css_003_contract_cat_dd/0001;ps='srvd-zui_css_003_list_mang_chnghst-0001';va='com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.et-zc_css_003_list_mang_chng_hst.accessright'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+                <Annotation Term="SAP__common.Label" String="Access Right"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/HasDraftEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has Draft"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has draft document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/DraftEntityCreationDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/DraftEntityLastChangeDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/HasActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/IsActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Is active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Is active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/__CreateByAssociationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/__EntityControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/__OperationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/_Attach">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZC_CSS_003_LIST_MANG_CHNG_HST">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_Attach"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Path="__CreateByAssociationControl/_Attach"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_Changelog"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_Contact"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Path="__CreateByAssociationControl/_Contact"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_Inactive"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Path="__CreateByAssociationControl/_Inactive"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.DraftRoot">
+                    <Record>
+                        <PropertyValue Property="PreparationAction" String="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.Prepare"/>
+                        <PropertyValue Property="EditAction" String="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.Edit"/>
+                        <PropertyValue Property="ActivationAction" String="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.Activate"/>
+                        <PropertyValue Property="DiscardAction" String="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.Discard"/>
+                        <PropertyValue Property="AdditionalNewActions">
+                            <Collection>
+                                <String>com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.Copy</String>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityCreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityLastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__CreateByAssociationControl</PropertyPath>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__CreateByAssociationControl</PropertyPath>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Path="__EntityControl/Deletable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Path="__EntityControl/Updatable"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/_Contact">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/_Inactive">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Reactivate(SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/Reactivate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Deactivate(SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/Deactivate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Edit(SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/Edit"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Copy(SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/Copy"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/ValidFrom">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_css_003_list_maint_vh/0001;ps='srvd-zui_css_003_list_mang_chnghst-0001';va='com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.et-zc_css_003_list_mang_chng_hst.validfrom'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Valid From"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/ValidTo">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_css_003_list_maint_vh/0001;ps='srvd-zui_css_003_list_mang_chnghst-0001';va='com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.et-zc_css_003_list_mang_chng_hst.validto'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Valid To"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType">
+                <Annotation Term="SAP__common.Label" String="Cunsumption view of List Change History"/>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="Basic Details"/>
+                            <PropertyValue Property="ID" String="BasicInfo"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="General Information"/>
+                                        <PropertyValue Property="ID" String="List"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="List Validity"/>
+                                        <PropertyValue Property="ID" String="ListValidity"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#DatesGroup"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                        <Record Type="SAP__UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="Qualifying Criteria"/>
+                            <PropertyValue Property="ID" String="QualifyInfo"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Contract Categories"/>
+                                        <PropertyValue Property="ID" String="Contract"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#ContractGroup"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Contract-Level Contact Categories"/>
+                                        <PropertyValue Property="ID" String="ContractContact"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#ContactGroup"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Contacts"/>
+                            <PropertyValue Property="ID" String="ActiveContact"/>
+                            <PropertyValue Property="Target" AnnotationPath="_Contact/@SAP__UI.LineItem"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="ID" String="InactiveContact"/>
+                            <PropertyValue Property="Target" AnnotationPath="_Inactive/@SAP__UI.LineItem"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Attachment"/>
+                            <PropertyValue Property="ID" String="Attachment"/>
+                            <PropertyValue Property="Target" AnnotationPath="_Attach/@SAP__UI.LineItem"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Changes"/>
+                            <PropertyValue Property="ID" String="ChangesLogs"/>
+                            <PropertyValue Property="Target" AnnotationPath="_Changelog/@SAP__UI.LineItem"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="ContactGroup">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ContactType"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="AccessRightCategory"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="AccessRight"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="ContractGroup">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="AgreementMarket"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="AgreementType"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="AgreementSector"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ServiceOffering"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="DatesGroup">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ValidFrom"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ValidTo"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="List"/>
+                        <PropertyValue Property="TypeNamePlural" String="Lists"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Label" String="List ID"/>
+                                <PropertyValue Property="Value" Path="ListId"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ListName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Departme Responsible"/>
+                            <PropertyValue Property="Value" Path="DepartmeRespons"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Subscription List Flag"/>
+                            <PropertyValue Property="Value" Path="SubscriptionList"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ListDescr"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="QualifyingCriteria"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="List ID"/>
+                            <PropertyValue Property="Value" Path="ListId"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="List Name"/>
+                            <PropertyValue Property="Value" Path="ListName"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Departme Responsible"/>
+                            <PropertyValue Property="Value" Path="DepartmeRespons"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valid From"/>
+                            <PropertyValue Property="Value" Path="ValidFrom"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valid To"/>
+                            <PropertyValue Property="Value" Path="ValidTo"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Subscription List"/>
+                            <PropertyValue Property="Value" Path="SubscriptionList"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="List Status"/>
+                            <PropertyValue Property="Value" Path="ListStatus"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="List Criteria"/>
+                            <PropertyValue Property="Value" Path="ListCriteria"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="List Description"/>
+                            <PropertyValue Property="Value" Path="ListDescr"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Last Updated"/>
+                            <PropertyValue Property="Value" Path="LastUpdated"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Qualifying Criteria"/>
+                            <PropertyValue Property="Value" Path="QualifyingCriteria"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Agreement Market"/>
+                            <PropertyValue Property="Value" Path="AgreementMarket"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Agreement Type"/>
+                            <PropertyValue Property="Value" Path="AgreementType"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Agreement Sector"/>
+                            <PropertyValue Property="Value" Path="AgreementSector"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Service Offering"/>
+                            <PropertyValue Property="Value" Path="ServiceOffering"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Contact Type"/>
+                            <PropertyValue Property="Value" Path="ContactType"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Access Right Category"/>
+                            <PropertyValue Property="Value" Path="AccessRightCategory"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Access Right"/>
+                            <PropertyValue Property="Value" Path="AccessRight"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Copy"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.Copy(com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Reactivate"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.Reactivate(com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Deactivate"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.Deactivate(com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_LIST_MANG_CHNG_HSTType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>ListId</PropertyPath>
+                        <PropertyPath>ListName</PropertyPath>
+                        <PropertyPath>DepartmeRespons</PropertyPath>
+                        <PropertyPath>ValidFrom</PropertyPath>
+                        <PropertyPath>ValidTo</PropertyPath>
+                        <PropertyPath>SubscriptionList</PropertyPath>
+                        <PropertyPath>ListStatus</PropertyPath>
+                        <PropertyPath>ListCriteria</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/ListId">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="List ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/ListName">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="List Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/ContactId">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Business Partner"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Business Partner Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/Origin">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Added/Origin"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/Phone">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Extension"/>
+                <Annotation Term="SAP__common.QuickInfo" String="First Telephone No.: Extension"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/Mobile">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Extension"/>
+                <Annotation Term="SAP__common.QuickInfo" String="First Telephone No.: Extension"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/HasDraftEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has Draft"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has draft document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/DraftEntityCreationDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/DraftEntityLastChangeDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/HasActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/IsActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Is active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Is active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/__EntityControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/__OperationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZC_CSS_003_CONTACT_LIST_MAINTE">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_listmang"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.DraftNode">
+                    <Record/>
+                </Annotation>
+                <Annotation Term="SAP__common.DraftActivationVia">
+                    <Collection>
+                        <String>SAP__self.Container/ZC_CSS_003_LIST_MANG_CHNG_HST</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityCreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityLastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Path="__EntityControl/Deletable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Path="__EntityControl/Updatable"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Duplicate(SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/Duplicate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType">
+                <Annotation Term="SAP__common.Label" String="Cunsumption view of Active Contact list"/>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Contact list"/>
+                            <PropertyValue Property="ID" String="List"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Active list contact"/>
+                        <PropertyValue Property="TypeNamePlural" String="Active list contacts"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Label" String="Contact ID"/>
+                                <PropertyValue Property="Value" Path="ContactId"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Contact ID"/>
+                            <PropertyValue Property="Value" Path="ContactId"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Contact Name"/>
+                            <PropertyValue Property="Value" Path="ContactName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Added/Origin"/>
+                            <PropertyValue Property="Value" Path="Origin"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Company Name"/>
+                            <PropertyValue Property="Value" Path="CompanyName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Phone"/>
+                            <PropertyValue Property="Value" Path="Phone"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Mobile"/>
+                            <PropertyValue Property="Value" Path="Mobile"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Email"/>
+                            <PropertyValue Property="Value" Path="Email"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valid From"/>
+                            <PropertyValue Property="Value" Path="ValidFrom"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valid To"/>
+                            <PropertyValue Property="Value" Path="ValidTo"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Contact ID"/>
+                            <PropertyValue Property="Value" Path="ContactId"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Contact Name"/>
+                            <PropertyValue Property="Value" Path="ContactName"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Added/Origin"/>
+                            <PropertyValue Property="Value" Path="Origin"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Company Name"/>
+                            <PropertyValue Property="Value" Path="CompanyName"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Phone"/>
+                            <PropertyValue Property="Value" Path="Phone"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Mobile"/>
+                            <PropertyValue Property="Value" Path="Mobile"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Email"/>
+                            <PropertyValue Property="Value" Path="Email"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valid From"/>
+                            <PropertyValue Property="Value" Path="ValidFrom"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valid From"/>
+                            <PropertyValue Property="Value" Path="ValidTo"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Bulk Upload"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.BulkUpload(Collection(com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_CONTACT_LIST_MAINTEType))"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Duplicate"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.Duplicate(com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.ZC_CSS_003_CONTACT_LIST_MAINTEType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>ContactId</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/ListId">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="List ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/ListName">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="List Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/ContactId">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Business Partner"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Business Partner Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/Origin">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Added/Origin"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/Phone">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Extension"/>
+                <Annotation Term="SAP__common.QuickInfo" String="First Telephone No.: Extension"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/Mobile">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Extension"/>
+                <Annotation Term="SAP__common.QuickInfo" String="First Telephone No.: Extension"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/HasDraftEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has Draft"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has draft document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/DraftEntityCreationDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/DraftEntityLastChangeDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/HasActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/IsActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Is active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Is active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/__EntityControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/__OperationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/zc_css_003_inacti_contact_list">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_listmang"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.DraftNode">
+                    <Record/>
+                </Annotation>
+                <Annotation Term="SAP__common.DraftActivationVia">
+                    <Collection>
+                        <String>SAP__self.Container/ZC_CSS_003_LIST_MANG_CHNG_HST</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityCreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityLastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Path="__EntityControl/Deletable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Path="__EntityControl/Updatable"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Reinstate(SAP__self.zc_css_003_inacti_contact_listType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/Reinstate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType">
+                <Annotation Term="SAP__common.Label" String="Cunsumption view of InActive Contactlist"/>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Contact list"/>
+                            <PropertyValue Property="ID" String="List"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Inactive Contact"/>
+                        <PropertyValue Property="TypeNamePlural" String="Inactive Contacts"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Label" String="Contact ID"/>
+                                <PropertyValue Property="Value" Path="ContactId"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Contact ID"/>
+                            <PropertyValue Property="Value" Path="ContactId"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Contact Name"/>
+                            <PropertyValue Property="Value" Path="ContactName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Added/Origin"/>
+                            <PropertyValue Property="Value" Path="Origin"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Company Name"/>
+                            <PropertyValue Property="Value" Path="CompanyName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Phone"/>
+                            <PropertyValue Property="Value" Path="Phone"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Mobile"/>
+                            <PropertyValue Property="Value" Path="Mobile"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Email"/>
+                            <PropertyValue Property="Value" Path="Email"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valid From"/>
+                            <PropertyValue Property="Value" Path="ValidFrom"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valid To"/>
+                            <PropertyValue Property="Value" Path="ValidTo"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Contact ID"/>
+                            <PropertyValue Property="Value" Path="ContactId"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Contact Name"/>
+                            <PropertyValue Property="Value" Path="ContactName"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Added/Origin"/>
+                            <PropertyValue Property="Value" Path="Origin"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Company Name"/>
+                            <PropertyValue Property="Value" Path="CompanyName"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Phone"/>
+                            <PropertyValue Property="Value" Path="Phone"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Mobile"/>
+                            <PropertyValue Property="Value" Path="Mobile"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Email"/>
+                            <PropertyValue Property="Value" Path="Email"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valid From"/>
+                            <PropertyValue Property="Value" Path="ValidFrom"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valid From"/>
+                            <PropertyValue Property="Value" Path="ValidTo"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Reinstate"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.Reinstate(com.sap.gateway.srvd.zui_css_003_list_mang_chnghst.v0001.zc_css_003_inacti_contact_listType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>ContactId</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftEntityType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Entity ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreatedByUser">
+                <Annotation Term="SAP__common.Text" Path="CreatedByUserDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created By"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangedByUser">
+                <Annotation Term="SAP__common.Text" Path="LastChangedByUserDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed By"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftAccessType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Access Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/InProcessByUser">
+                <Annotation Term="SAP__common.Text" Path="InProcessByUserDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process By"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsKeptByUser">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Is Kept By User"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsCreatedByMe">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created By Me"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsLastChangedByMe">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed By Me"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsProcessedByMe">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process By Me"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType">
+                <Annotation Term="SAP__common.Label" String="Draft Administration Data"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/I_DraftAdministrativeData">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="LastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CHANGE_LOG_MAINType/ListId">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="List ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CHANGE_LOG_MAINType/ListName">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="List Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CHANGE_LOG_MAINType/ChangedById">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="User"/>
+                <Annotation Term="SAP__common.QuickInfo" String="User Name of Person Making Change in Change Document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CHANGE_LOG_MAINType/Contact">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Contact"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CHANGE_LOG_MAINType/ChangedByName">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Changed by(Name)"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Changed By(Name)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CHANGE_LOG_MAINType/FieldName">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Field Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CHANGE_LOG_MAINType/OldValue">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Old Value"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Old Content of Changed Field"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CHANGE_LOG_MAINType/NewValue">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="New Value"/>
+                <Annotation Term="SAP__common.QuickInfo" String="New Content of Changed Field"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CHANGE_LOG_MAINType/AdditionalKeys">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Additional Keys"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZC_CSS_003_CHANGE_LOG_MAIN">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_listmang"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="true"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CHANGE_LOG_MAINType">
+                <Annotation Term="SAP__common.Label" String="Cunsumption view of Change log History"/>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Change Log"/>
+                            <PropertyValue Property="ID" String="List"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Changes log"/>
+                        <PropertyValue Property="TypeNamePlural" String="Changes log"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Date"/>
+                            <PropertyValue Property="Value" Path="Udate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Time"/>
+                            <PropertyValue Property="Value" Path="Utime"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Contact"/>
+                            <PropertyValue Property="Value" Path="Contact"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Changed By(ID)"/>
+                            <PropertyValue Property="Value" Path="ChangedById"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Changed By(Name)"/>
+                            <PropertyValue Property="Value" Path="ChangedByName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Field Name"/>
+                            <PropertyValue Property="Value" Path="FieldName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Old Value"/>
+                            <PropertyValue Property="Value" Path="OldValue"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="New Value"/>
+                            <PropertyValue Property="Value" Path="NewValue"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Additional Key"/>
+                            <PropertyValue Property="Value" Path="AdditionalKeys"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Date"/>
+                            <PropertyValue Property="Value" Path="Udate"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Time"/>
+                            <PropertyValue Property="Value" Path="Utime"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Contact"/>
+                            <PropertyValue Property="Value" Path="Contact"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Changed By(ID)"/>
+                            <PropertyValue Property="Value" Path="ChangedById"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Changed By(Name)"/>
+                            <PropertyValue Property="Value" Path="ChangedByName"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Field Name"/>
+                            <PropertyValue Property="Value" Path="FieldName"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Old Value"/>
+                            <PropertyValue Property="Value" Path="OldValue"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="New Value"/>
+                            <PropertyValue Property="Value" Path="NewValue"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Additional Key"/>
+                            <PropertyValue Property="Value" Path="AdditionalKeys"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/Medium"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftUUID">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft (Technical ID)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/ProcessingStartDateTime">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process Since"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/EnqueueStartDateTime">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Locked Since"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreatedByUserDescription">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created By (Description)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangedByUserDescription">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed By (Description)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/InProcessByUserDescription">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process By (Description)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_Attachment_listType/AttachId">
+                <Annotation Term="SAP__common.Label" String="Attachment ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_LIST_MANG_CHNG_HSTType/LastUpdated">
+                <Annotation Term="SAP__common.Label" String="Last Updated"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/ContactName">
+                <Annotation Term="SAP__common.Label" String="Contact name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/CompanyName">
+                <Annotation Term="SAP__common.Label" String="Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name 1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/Email">
+                <Annotation Term="SAP__common.Label" String="E-Mail Address"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/ValidFrom">
+                <Annotation Term="SAP__common.Label" String="Valid From"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CONTACT_LIST_MAINTEType/ValidTo">
+                <Annotation Term="SAP__common.Label" String="Valid To"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/ContactName">
+                <Annotation Term="SAP__common.Label" String="Contact name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/CompanyName">
+                <Annotation Term="SAP__common.Label" String="Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name 1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/Email">
+                <Annotation Term="SAP__common.Label" String="E-Mail Address"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/ValidFrom">
+                <Annotation Term="SAP__common.Label" String="Valid From"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zc_css_003_inacti_contact_listType/ValidTo">
+                <Annotation Term="SAP__common.Label" String="Valid To"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreationDateTime">
+                <Annotation Term="SAP__common.Label" String="Draft Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangeDateTime">
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CHANGE_LOG_MAINType/Udate">
+                <Annotation Term="SAP__common.Label" String="Date"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Creation date of the change document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_CSS_003_CHANGE_LOG_MAINType/Utime">
+                <Annotation Term="SAP__common.Label" String="Time"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Time changed"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
