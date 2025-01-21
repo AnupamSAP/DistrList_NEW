@@ -42,3 +42,17 @@ An SAP Fiori application.
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
 
+## Steps to inittialise the GIT and push into the branch
+1. git init
+2. git config --global user.email "your Email"
+3. git config --global user.name "Your name"
+4. git remote set-url origin https:/repository_url
+5. git remote add origin https:/repository_url
+6. git add .
+7. git commit -m "Initial Commit"
+8. git branch -M main
+9. git branch -M master
+10. git push origin master
+
+
+
